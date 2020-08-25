@@ -1,0 +1,13 @@
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let product of products">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name|titlecase}}</h5>
+          <p class="card-text">{{product.price|currency}}</p>
+          <button (click)="delProduct(product._id)" class="btn btn-primary">Delete</button>
+          <button (click)="addUpdate(product._id)" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button  routerLink="/addUpdate/:id" class="btn btn-primary">Add Product</button>

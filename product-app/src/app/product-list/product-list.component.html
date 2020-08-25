@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<form #searchBar="ngForm" class="example" >
+  <input type="text" placeholder="Search.." [(ngModel)]="targetProduct" name="search" >
+  <button type="submit" (click)="searchProducts()" ><i class="fa fa-search"></i></button>
+</form>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let product of products">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name|titlecase}}</h5>
+          <p class="card-text">{{product.price|currency}}</p>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
